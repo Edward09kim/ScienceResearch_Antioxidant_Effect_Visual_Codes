@@ -6,499 +6,186 @@
 <title>Sea Cucumber Exosome Antioxidant Research — ScienceResearch</title>
 
 <style>
-  :root{
-    --bg1: #0f172a;
-    --bg2: #0b1220;
-    --card-bg: rgba(255,255,255,0.98);
-    --muted: #6b7280;
-    --accent: #0ea5a4;
-    --accent-2:#7c3aed;
-    --glass: rgba(255,255,255,0.6);
-    --outline: linear-gradient(135deg, rgba(14,165,164,0.18), rgba(124,58,237,0.12));
-    --shadow: 0 8px 30px rgba(2,6,23,0.6);
-    --radius: 14px;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  }
+:root{
+--bg1:#0f172a;
+--bg2:#0b1220;
+--card-bg:rgba(255,255,255,0.98);
+--muted:#6b7280;
+--accent:#0ea5a4;
+--accent-2:#7c3aed;
+--outline:linear-gradient(135deg, rgba(14,165,164,0.18), rgba(124,58,237,0.12));
+--shadow:0 8px 30px rgba(2,6,23,0.6);
+--radius:14px;
+font-family:Inter,system-ui;
+}
 
-  /* Page background */
-  html,body{
-    height:100%;
-    margin:0;
-    background:
-      radial-gradient(800px 400px at 10% 10%, rgba(124,58,237,0.12), transparent 10%),
-      radial-gradient(700px 350px at 90% 90%, rgba(14,165,164,0.10), transparent 15%),
-      linear-gradient(180deg, var(--bg1), var(--bg2));
-    color:#0b1220;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-  }
+html,body{
+height:100%;
+margin:0;
+background:
+radial-gradient(800px 400px at 10% 10%, rgba(124,58,237,0.12), transparent 10%),
+radial-gradient(700px 350px at 90% 90%, rgba(14,165,164,0.10), transparent 15%),
+linear-gradient(180deg,var(--bg1),var(--bg2));
+}
 
-  /* Top nav / header */
-  .topbar{
-    position:sticky;
-    top:14px;
-    z-index:30;
-    display:flex;
-    gap:16px;
-    align-items:center;
-    width:min(1200px,94%);
-    margin:0 auto 28px;
-    padding:10px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    border-radius:999px;
-    backdrop-filter: blur(6px) saturate(120%);
-    box-shadow: 0 6px 18px rgba(2,6,23,0.45);
-    border:1px solid rgba(255,255,255,0.04);
-  }
+.wrapper{
+width:min(1100px,94%);
+margin:0 auto 80px;
+}
 
-  .logo{
-    display:flex;
-    gap:12px;
-    align-items:center;
-    cursor:default;
-    padding-left:10px;
-  }
+.paper{
+background:var(--card-bg);
+border-radius:var(--radius);
+padding:34px;
+box-shadow:var(--shadow);
+margin-top:40px;
+}
 
-  .logo svg{ width:44px; height:44px; flex-shrink:0; }
-  .brand{
-    display:flex;
-    flex-direction:column;
-    line-height:1;
-  }
-  .brand .name{
-    font-weight:700;
-    color:white;
-    letter-spacing:0.2px;
-    font-size:16px;
-  }
-  .brand .tag{
-    font-size:11px;
-    color:var(--muted);
-  }
+h2{
+font-size:18px;
+margin:28px 0 12px;
+border-bottom:2px solid rgba(0,0,0,0.05);
+padding-bottom:8px;
+}
 
-  nav.menu{
-    margin-left:auto;
-    display:flex;
-    gap:8px;
-    align-items:center;
-  }
+pre{
+background:#f8fafc;
+padding:18px;
+border-radius:10px;
+white-space:pre-wrap;
+line-height:1.6;
+}
 
-  .menu button{
-    border:0;
-    background:transparent;
-    padding:10px 14px;
-    border-radius:10px;
-    color:rgba(255,255,255,0.85);
-    font-weight:600;
-    cursor:pointer;
-    transition:all .18s ease;
-  }
-  .menu button:hover{ transform:translateY(-2px); background: rgba(255,255,255,0.03); }
-  .menu button.active{
-    box-shadow: 0 6px 20px rgba(124,58,237,0.14);
-    background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-    border:1px solid rgba(255,255,255,0.06);
-  }
+.figure{
+text-align:center;
+margin:20px 0;
+}
 
-  /* Main content wrapper */
-  .wrapper{
-    width:min(1100px,94%);
-    margin:0 auto 80px;
-    display:grid;
-    grid-template-columns: 1fr;
-    gap:22px;
-  }
+.figure img{
+max-width:80%;
+border-radius:10px;
+}
 
-  /* Paper Card */
-  .paper{
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    padding:34px;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(11,18,32,0.06);
-    position:relative;
-    overflow:hidden;
-  }
+.caption{
+color:#6b7280;
+font-size:13px;
+margin-top:8px;
+}
 
-  /* decorative outline */
-  .paper::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    background: var(--outline);
-    z-index:0;
-    filter: blur(18px);
-    opacity:0.95;
-    pointer-events:none;
-  }
-  .paper > *{ position:relative; z-index:2; }
+.title{
+font-size:28px;
+font-weight:800;
+}
 
-  header.paper-head{
-    display:flex;
-    gap:18px;
-    align-items:center;
-    justify-content:space-between;
-  }
-
-  .paper-head .title-block{
-    display:flex;
-    gap:16px;
-    align-items:center;
-  }
-
-  .paper-head .title{
-    font-size:28px;
-    font-weight:800;
-    color:#071023;
-    margin:0;
-  }
-  .paper-head .subtitle{
-    font-size:13px;
-    color:var(--muted);
-    margin-top:6px;
-  }
-
-  /* content styling */
-  h2{
-    font-size:18px;
-    margin:28px 0 12px;
-    color:#0b1220;
-    border-bottom:2px solid rgba(11,18,32,0.04);
-    padding-bottom:8px;
-  }
-
-  pre{
-    background:linear-gradient(180deg, rgba(11,18,32,0.02), rgba(11,18,32,0.01));
-    padding:18px;
-    border-radius:10px;
-    border:1px solid rgba(11,18,32,0.03);
-    white-space:pre-wrap;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-    color:#0b1220;
-    line-height:1.6;
-  }
-
-  .figure{
-    text-align:center;
-    margin:20px 0;
-  }
-  .figure img{
-    max-width:80%;
-    border-radius:10px;
-    box-shadow: 0 10px 30px rgba(2,6,23,0.12);
-    border: 1px solid rgba(11,18,32,0.04);
-  }
-
-  .caption{
-    color:var(--muted);
-    margin-top:10px;
-    font-size:13px;
-  }
-
-  /* References panel */
-  .refs-panel{
-    margin-top:18px;
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    justify-content:space-between;
-    flex-wrap:wrap;
-  }
-  .refs-box{
-    flex:1 1 420px;
-    min-height:120px;
-    border-radius:10px;
-    padding:16px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98));
-    border:1px solid rgba(11,18,32,0.04);
-  }
-  .refs-box[contenteditable="true"]{
-    outline: 2px dashed rgba(14,165,164,0.18);
-  }
-  .refs-actions{ display:flex; gap:8px; align-items:center; }
-  .btn{
-    background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    color:white;
-    padding:10px 14px;
-    border-radius:8px;
-    border:0;
-    cursor:pointer;
-    font-weight:700;
-    box-shadow: 0 8px 20px rgba(14,165,164,0.12);
-  }
-  .btn.ghost{
-    background:transparent;
-    color:var(--muted);
-    border:1px solid rgba(11,18,32,0.04);
-    box-shadow:none;
-    font-weight:600;
-  }
-
-  /* small screens */
-  @media (max-width:720px){
-    .paper{ padding:22px; }
-    .paper-head .title{ font-size:20px; }
-    .logo svg{ width:38px; height:38px; }
-    nav.menu{ display:flex; gap:6px; }
-  }
-
-  footer{
-    width:min(1100px,94%);
-    margin:18px auto 80px;
-    color:rgba(255,255,255,0.65);
-    font-size:13px;
-    text-align:center;
-  }
+.subtitle{
+font-size:13px;
+color:#6b7280;
+}
 
 </style>
 </head>
+
 <body>
 
-  <!-- top navigation with logo and simple menu -->
-  <div class="topbar" role="navigation" aria-label="Main navigation">
-    <div class="logo" aria-hidden="true">
-      <!-- replace this SVG with your logo file if you have one -->
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1">
-            <stop offset="0" stop-color="#0ea5a4"/>
-            <stop offset="1" stop-color="#7c3aed"/>
-          </linearGradient>
-        </defs>
-        <circle cx="50" cy="50" r="46" fill="url(#g)"/>
-        <text x="50" y="58" text-anchor="middle" font-family="Inter" font-weight="800" font-size="44" fill="#fff">S</text>
-      </svg>
+<main class="wrapper">
 
-      <div class="brand">
-        <div class="name">ScienceResearch</div>
-        <div class="tag">Sea Cucumber Exosome Study</div>
-      </div>
-    </div>
+<article class="paper">
 
-    <nav class="menu" role="menubar" aria-label="Page menu">
-      <button id="btnHome" class="active" aria-pressed="true">Home</button>
-      <button id="btnRefs" aria-pressed="false">References</button>
-    </nav>
-  </div>
+<h1 class="title">Sea Cucumber Exosome Antioxidant Research</h1>
+<div class="subtitle">Exploring antioxidant potential of exosome-like vesicles</div>
 
-  <main class="wrapper" role="main">
-    <article class="paper" aria-labelledby="paper-title">
 
-      <header class="paper-head">
-        <div class="title-block">
-          <h1 id="paper-title" class="title">Sea Cucumber Exosome Antioxidant Research</h1>
-          <div style="display:flex;flex-direction:column;">
-            <div class="subtitle">Exploring antioxidant potential of exosome-like vesicles</div>
-          </div>
-        </div>
+<section>
+<h2>Abstract</h2>
+<pre>
+This study investigated whether exosome-like vesicles extracted from sea cucumbers possess antioxidant activity. 
+Exosomes were isolated through homogenization, centrifugation, and filtration. Antioxidant activity was evaluated 
+using a DPPH radical scavenging assay. The results showed concentration-dependent antioxidant activity, suggesting 
+potential applications in anti-aging research and space biotechnology.
+</pre>
+</section>
 
-        <!-- small metadata -->
-        <div style="text-align:right;">
-          <div style="font-size:13px;color:var(--muted);">Preliminary Report</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:6px;">ScienceResearch</div>
-        </div>
-      </header>
 
-      <section>
-        <h2>Abstract</h2>
-        <pre>This study aimed to investigate whether exosome-like vesicles extracted from sea cucumber
-exhibit antioxidant activity. Exosomes were isolated from frozen sea cucumber tissue through
-homogenization, sequential centrifugation, and filtration. Antioxidant activity was evaluated
-using a DPPH radical scavenging assay. The results demonstrated concentration-dependent
-antioxidant activity, suggesting potential applications in anti-aging and space biotechnology.</pre>
-      </section>
+<section>
+<h2>Introduction</h2>
+<pre>
+Aging is closely related to oxidative damage caused by reactive oxygen species (ROS). Excess ROS damages 
+mitochondria and accelerates cellular aging. This effect can become more severe in extreme environments 
+such as space, where astronauts experience accelerated aging due to microgravity.
 
-      <section>
-        <h2>Introduction</h2>
-        <pre>Aging is a fundamental biological process closely associated with cellular damage and declining
-physiological function. One major contributor to cellular aging is the accumulation of reactive
-oxygen species (ROS), which are inevitably generated during mitochondrial energy production.
-Mitochondria produce approximately 95% of cellular energy required for protein synthesis;
-however, excessive ROS damages mitochondrial structures, reducing energy efficiency and
-accelerating aging.
+Exosomes are nanoscale extracellular vesicles that transport proteins, lipids, and other bioactive molecules 
+between cells. Because of their biological function, exosomes may carry antioxidant compounds.
 
-This phenomenon is intensified in extreme environments such as space. Astronauts experience
-accelerated aging due to microgravity, including muscle atrophy, bone loss, and metabolic
-alterations. Studies involving identical twins, such as NASA astronauts Scott Kelly and Mark Kelly,
-have demonstrated biological changes during long-duration spaceflight, including alterations in
-telomere length and mitochondrial function.
+Sea cucumbers are marine organisms known for their antioxidant and anti-inflammatory properties. 
+This study hypothesizes that exosome-like vesicles extracted from sea cucumbers may possess antioxidant 
+activity capable of reducing oxidative stress.
+</pre>
+</section>
 
-One potential solution to oxidative stress is the use of exosomes. Exosomes are nanoscale
-extracellular vesicles released by cells for intercellular communication, often containing
-bioactive molecules such as proteins and lipids. Due to their biological role, exosomes may
-possess tissue-repairing and antioxidant capabilities.
 
-Sea cucumbers are marine organisms known for their antioxidant, anti-inflammatory, and
-restorative properties. Previous studies have reported strong antioxidant activity in sea
-cucumber-derived peptides. This study hypothesizes that exosome-like vesicles extracted from
-sea cucumbers possess antioxidant properties capable of reducing ROS-induced cellular damage.</pre>
-      </section>
+<section>
+<h2>Materials and Methods</h2>
+<pre>
+Sea cucumbers were mechanically homogenized and filtered to remove large debris. The solution was centrifuged 
+to remove cellular impurities and sequentially filtered using 0.45 μm and 0.22 μm filters to isolate 
+exosome-like vesicles.
 
-      <section>
-        <h2>Materials and Methods</h2>
-        <pre>Purified sea cucumbers were mechanically homogenized using a magnetic stirrer until a
-semi-liquid consistency was achieved. The homogenized mixture was filtered through sterile
-gauze to remove large debris and centrifuged at 3,000 × g for 10 minutes to remove cellular
-impurities. The supernatant was further centrifuged at 10,000 × g for 30 minutes.
+Antioxidant activity was measured using a DPPH radical scavenging assay. Trolox served as the positive control 
+and ethanol served as the negative control. Samples were incubated with DPPH solution for 30 minutes and 
+absorbance was measured at 517 nm.
+</pre>
+</section>
 
-The resulting solution was sequentially filtered using 0.45 μm and 0.22 μm syringe filters to
-isolate exosome-like vesicles. The final filtrate was collected for antioxidant analysis.
 
-Antioxidant activity was evaluated using a DPPH radical scavenging assay. Trolox was used as
-a standard antioxidant reference, while 99% ethanol served as a negative control. Samples
-were incubated with DPPH solution for 30 minutes in the dark, and absorbance was measured
-at 517 nm.</pre>
-      </section>
+<section>
+<h2>Results</h2>
+<pre>
+The DPPH assay demonstrated concentration-dependent antioxidant activity in sea cucumber exosome extracts. 
+Samples treated with higher concentrations showed lower absorbance values, indicating stronger radical 
+scavenging activity compared with the control group.
 
-      <section>
-        <h2>Figure 1 – Exosome Extraction Process</h2>
-        <div class="figure">
-          <img src="figure1.png" alt="Exosome extraction workflow (homogenization, centrifugation, filtration)">
-          <div class="caption">Figure 1. Workflow showing homogenization, centrifugation, and filtration used to isolate exosomes from sea cucumber tissue.</div>
-        </div>
-      </section>
+These results suggest that compounds present in the sea cucumber extract are capable of neutralizing 
+free radicals.
+</pre>
+</section>
 
-      <section>
-        <h2>Results</h2>
-        <pre>The DPPH assay demonstrated concentration-dependent antioxidant activity in sea cucumber
-exosome extracts. The negative control exhibited an absorbance value of approximately 0.46.
-Samples treated with 5 μg/mL and 20 μg/mL exosome extracts showed reduced absorbance values
-of approximately 0.38 and 0.28, respectively.
 
-The calculated radical scavenging activity was approximately 16% for the low concentration
-group and 38% for the high concentration group. These values were comparable to Trolox
-standards, indicating effective antioxidant capacity.</pre>
-      </section>
+<section>
+<h2>Discussion</h2>
+<pre>
+The experiment demonstrated that sea cucumber–derived exosome extracts possess measurable antioxidant activity. 
+When mixed with DPPH solution, the purple radical solution changed to yellow, indicating that antioxidant 
+components donated electrons and neutralized free radicals.
 
-      <section>
-        <h2>Figure 2 – DPPH Color Change</h2>
-        <div class="figure">
-          <img src="figure2.png" alt="DPPH color change before and after">
-          <div class="caption">Figure 2. Visual comparison of DPPH solution before and after addition of sea cucumber exosome extract.</div>
-        </div>
-      </section>
+Sea cucumbers naturally experience oxidative stress in marine environments due to UV radiation, salinity 
+changes, and reactive oxygen species. As a result, they have developed strong antioxidant defense systems. 
+Exosomes may function as carriers that transport antioxidant molecules produced by sea cucumber cells.
 
-      <section>
-        <h2>Graph – Antioxidant Activity</h2>
-        <div class="figure">
-          <img src="graph1.png" alt="Graph of radical scavenging activity">
-          <div class="caption">Graph 1. Comparison of radical scavenging activity between control and exosome-treated samples.</div>
-        </div>
-      </section>
+However, the extraction process used in this study did not fully isolate pure exosomes. Therefore, the 
+observed antioxidant activity may result from both extracellular vesicles and other bioactive compounds 
+present in the extract. Future research should include more advanced purification and molecular analysis 
+to confirm the specific role of sea cucumber exosomes.
+</pre>
+</section>
 
-      <section>
-        <h2>Discussion</h2>
-        <pre>The results confirm that sea cucumber-derived exosome-like vesicles exhibit antioxidant activity.
-The observed color change in the DPPH assay reflects effective redox reactions in which
-antioxidant components donate electrons to neutralize free radicals.
 
-Sea cucumbers naturally endure oxidative stress in marine environments, which may explain
-the presence of potent antioxidant systems. Exosomes likely function as carriers of these
-bioactive molecules. However, further purification and molecular characterization are required
-to confirm that the antioxidant activity is exclusively derived from exosomes.</pre>
-      </section>
+<section>
+<h2>Conclusion</h2>
+<pre>
+This study provides preliminary evidence that exosome-like vesicles extracted from sea cucumbers show 
+antioxidant activity in a DPPH radical scavenging assay. As the concentration increased from 5 µg/mL 
+to 20 µg/mL, radical scavenging activity also increased, indicating a concentration-dependent effect.
 
-      <section>
-        <h2>Conclusion</h2>
-        <pre>This study demonstrates that exosome-like vesicles extracted from sea cucumbers possess
-significant antioxidant activity. The concentration-dependent effects observed in the DPPH
-assay suggest potential applications in anti-aging research, space biotechnology, and
-biomedical antioxidant development.</pre>
-      </section>
+These findings suggest that sea cucumber–derived exosomes may serve as a natural source of antioxidant 
+compounds. In the future, such biological materials could contribute to the development of antioxidant 
+supplements, biomedical therapies, and potential applications in space biotechnology to help protect 
+cells from oxidative stress.
+</pre>
+</section>
 
-      <!-- References area (editable) -->
-      <section id="referencesSection" style="margin-top:18px;">
-        <h2>References</h2>
-        <div class="refs-panel">
-          <div id="refsBox" class="refs-box" contenteditable="false" aria-label="References content">
-            <!-- default references; can be edited and saved -->
-            <strong>Man et al., 2022.</strong> Recent advances in sea cucumber peptide: Production, bioactive properties, and prospects.<br><br>
-            <strong>NASA Twins Study (n.d.).</strong> A multidimensional analysis of a year-long human spaceflight.<br><br>
-            Yang et al., 2025. Antioxidant potential of sea cucumber viscera and organ protection studies.
-          </div>
+</article>
 
-          <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
-            <div class="refs-actions">
-              <button id="editRefs" class="btn ghost">Edit</button>
-              <button id="saveRefs" class="btn">Save</button>
-            </div>
-
-            <div style="font-size:12px;color:var(--muted);max-width:260px;text-align:right;">
-              <div><strong>Tip:</strong> Click <em>Edit</em> to modify references. Click <em>Save</em> to store them locally.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </article>
-  </main>
-
-  <footer>
-    © <strong>ScienceResearch</strong> — Sea Cucumber Exosome Antioxidant Research. Built for GitHub Pages.
-  </footer>
-
-<script>
-  // Navigation buttons
-  const btnHome = document.getElementById('btnHome');
-  const btnRefs = document.getElementById('btnRefs');
-  const paper = document.querySelector('.paper');
-
-  btnHome.addEventListener('click', () => {
-    btnHome.classList.add('active'); btnRefs.classList.remove('active');
-    btnHome.setAttribute('aria-pressed','true'); btnRefs.setAttribute('aria-pressed','false');
-    window.scrollTo({top: paper.offsetTop - 20, behavior:'smooth'});
-  });
-
-  btnRefs.addEventListener('click', () => {
-    btnRefs.classList.add('active'); btnHome.classList.remove('active');
-    btnRefs.setAttribute('aria-pressed','true'); btnHome.setAttribute('aria-pressed','false');
-    const refSection = document.getElementById('referencesSection');
-    window.scrollTo({top: refSection.offsetTop - 18, behavior:'smooth'});
-  });
-
-  // References edit/save with localStorage persistence
-  const editBtn = document.getElementById('editRefs');
-  const saveBtn = document.getElementById('saveRefs');
-  const refsBox = document.getElementById('refsBox');
-  const STORAGE_KEY = 'scienceresearch_references_v1';
-
-  // Load saved refs (if any)
-  function loadRefs(){
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if(saved){
-      refsBox.innerHTML = saved;
-    }
-  }
-  loadRefs();
-
-  editBtn.addEventListener('click', () => {
-    refsBox.setAttribute('contenteditable','true');
-    refsBox.focus();
-    refsBox.style.padding = '14px';
-    editBtn.classList.add('ghost');
-    editBtn.textContent = 'Editing';
-  });
-
-  saveBtn.addEventListener('click', () => {
-    refsBox.setAttribute('contenteditable','false');
-    localStorage.setItem(STORAGE_KEY, refsBox.innerHTML);
-    editBtn.classList.remove('ghost');
-    editBtn.textContent = 'Edit';
-    // small saved feedback
-    saveBtn.textContent = 'Saved ✔';
-    setTimeout(()=> saveBtn.textContent = 'Save', 1500);
-  });
-
-  // keyboard shortcut: Ctrl+S to save references when editing
-  window.addEventListener('keydown', (e) => {
-    if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's'){
-      if(refsBox.getAttribute('contenteditable') === 'true'){
-        e.preventDefault();
-        saveBtn.click();
-      }
-    }
-  });
-</script>
+</main>
 
 </body>
 </html>
